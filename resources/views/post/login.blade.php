@@ -9,7 +9,7 @@
 
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-top: 80px;">
 			<div class="col-md-5 mx-auto">
 			<div id="first">
 				<div class="myform form ">
@@ -18,7 +18,8 @@
 							<h1>Login</h1>
 						 </div>
 					</div>
-                   <form action="logined.php" method="post" name="login">
+                   {{-- <form action="logined.php" method="post" name="login"> --}}
+                     <form action="{{ route('login.auth') }}" method="post" name="login">
                         @csrf
                            <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>

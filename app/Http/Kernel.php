@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'role' => \App\Http\Middleware\CheckToken::class,
         'after_middleware' => \App\Http\Middleware\AfterMiddleware::class,
         'check_login' => \App\Http\Middleware\CheckLogin::class,
+        'auth.jwt' => \Tymon\JWTAuth\Http\Middleware\Authenticate::class,
     ];
 }

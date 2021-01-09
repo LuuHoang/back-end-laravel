@@ -2,8 +2,10 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class CheckLogin
 {
@@ -17,7 +19,9 @@ class CheckLogin
     public function handle(Request $request, Closure $next)
     {
         if($request->session()->exists('user')){
-            if($request->session()->get('user')=='hoangluu2508@gmail.com'){
+            if($request->session()->get('user')=='hoang@gmail.com'){
+                // $user=User::query()->where('user','hoangluu2508@gmail.com')->first();
+                // Log::info('User:' .$user->user .'Id:' .$user->id);
                 return $next($request);
             }else{
                 return redirect('/home');

@@ -26,6 +26,13 @@
     		    <div class="form-group">
     		        <label for="description">Description</label>
     		        <textarea rows="5" class="form-control" name="description" ></textarea>
+				</div>
+				<div class="form-group">
+    		        <select class="custom-select" multiple>
+						<option selected>Category</option>
+						<option value="1">PHP</option>
+						<option value="2">JAVA</option>
+					  </select>
     		    </div>
     		    
     		    <div class="form-group">

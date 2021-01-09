@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 class DemoController extends Controller
 {
     //
@@ -26,5 +27,11 @@ class DemoController extends Controller
             $request->session()->put('pass',$request->input('password'));
             return 'Session dang luu';
         }
+    }
+    public function auth(Request $request){
+        if(Auth::attempt($request->only('email', 'password'))){
+            return redirect('/bt3');
+        }
+        return back();
     }
 }
